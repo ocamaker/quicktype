@@ -1,3 +1,10 @@
+
+Fixes of this fork:
+
+- Null safety from optional enums and fromJson method (dart)
+
+---
+
 ![](https://raw.githubusercontent.com/quicktype/quicktype/master/media/quicktype-logo.svg?sanitize=true)
 
 [![npm version](https://badge.fury.io/js/quicktype.svg)](https://badge.fury.io/js/quicktype)
