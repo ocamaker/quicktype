@@ -1,10 +1,10 @@
 {
-    "name": "quicktype",
+    "name": "@ocamaker/quicktype",
     "version": "23.2.0",
     "license": "Apache-2.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "repository": "https://github.com/quicktype/quicktype",
+    "repository": "https://github.com/ocamaker/quicktype",
     "engines": {
         "node": ">=18.12.0"
     },
@@ -16,7 +16,9 @@
         "clean": "rm -rf dist *~ packages/*/{dist,out}",
         "debug": "node --inspect-brk --max-old-space-size=4096 ./dist/index.js",
         "lint": "eslint src/** packages/*/src/**",
-        "lint:fix": "eslint --fix src/** packages/*/src/**"
+        "lint:fix": "eslint --fix src/** packages/*/src/**",
+        "bundle": "npm run build && npm pack && mkdir -p bundle && mv *.tgz bundle/",
+        "release": "npm run bundle && gh release create v$(node -p \"require('./package.json').version\") bundle/*.tgz --title \"v$(node -p \"require('./package.json').version\")\" --notes \"Release v$(node -p \"require('./package.json').version\")\""
     },
     "workspaces": [
         "./packages/quicktype-core",
