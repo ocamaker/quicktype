@@ -1,6 +1,6 @@
 {
     "name": "@ocamaker/quicktype",
-    "version": "23.2.4-ocamaker",
+    "version": "23.2.5-ocamaker",
     "license": "Apache-2.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -42,7 +42,8 @@
         "readable-stream": "^4.5.2",
         "stream-json": "1.8.0",
         "string-to-stream": "^3.0.1",
-        "typescript": "~5.8.3"
+        "typescript": "~5.8.3",
+        "wordwrap": "^1.0.0"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
