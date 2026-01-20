@@ -4,6 +4,10 @@ on:
         branches:
             - main
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
     publish:
         runs-on: ubuntu-22.04
@@ -13,6 +17,3 @@ jobs:
               env:
                 PUBLISH: true
             - run: npm run pub
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-                #   VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }} // Won't publish VSCode extension
