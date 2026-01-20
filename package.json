@@ -1,6 +1,6 @@
 {
     "name": "@ocamaker/quicktype",
-    "version": "23.2.2-ocamaker",
+    "version": "23.2.3-ocamaker",
     "license": "Apache-2.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
