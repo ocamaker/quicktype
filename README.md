@@ -8,7 +8,7 @@ Fixes of this fork:
 ![](https://raw.githubusercontent.com/quicktype/quicktype/master/media/quicktype-logo.svg?sanitize=true)
 
 [![npm version](https://badge.fury.io/js/quicktype.svg)](https://badge.fury.io/js/quicktype)
-![Build status](https://github.com/quicktype/quicktype/actions/workflows/master.yaml/badge.svg)
+![Build status](https://github.com/ocamaker/quicktype/actions/workflows/master.yaml/badge.svg)
 
 `quicktype` generates strongly-typed models and serializers from JSON, JSON Schema, TypeScript, and [GraphQL queries](https://blog.quicktype.io/graphql-with-quicktype/), making it a breeze to work with JSON type-safely in many programming languages.
 
@@ -191,7 +191,7 @@ async function main() {
 main();
 ```
 
-The argument to `quicktype` is a complex object with many optional properties. [Explore its definition](https://github.com/quicktype/quicktype/blob/master/packages/quicktype-core/src/Run.ts#L637) to understand what options are allowed.
+The argument to `quicktype` is a complex object with many optional properties. [Explore its definition](https://github.com/ocamaker/quicktype/blob/master/packages/quicktype-core/src/Run.ts#L637) to understand what options are allowed.
 
 ### Adding Custom logic or Rendering:
 
@@ -200,7 +200,7 @@ Check out [this guide](./doc/CustomRenderer.md) for more info.
 
 ## Contributing
 
-`quicktype` is [Open Source](LICENSE) and we love contributors! In fact, we have a [list of issues](https://github.com/quicktype/quicktype/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Ahelp-wanted) that are low-priority for us, but for which we'd happily accept contributions. Support for new target languages is also strongly desired. If you'd like to contribute, need help with anything at all, or would just like to talk things over, come [join us on Slack](http://slack.quicktype.io/).
+`quicktype` is [Open Source](LICENSE) and we love contributors! In fact, we have a [list of issues](https://github.com/ocamaker/quicktype/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Ahelp-wanted) that are low-priority for us, but for which we'd happily accept contributions. Support for new target languages is also strongly desired. If you'd like to contribute, need help with anything at all, or would just like to talk things over, come [join us on Slack](http://slack.quicktype.io/).
 
 ### Setup, Build, Run
 

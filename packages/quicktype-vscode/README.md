@@ -27,6 +27,6 @@ This extension is available for free in the [Visual Studio Code Marketplace](htt
 
 ## Contribute!
 
-quicktype is an open source project, and we're always happy about contributors. If you can think of a way to improve [this extension](https://github.com/quicktype/quicktype-vscode), or [quicktype](https://github.com/quicktype/quicktype), please consider contributing, especially if you know TypeScript. Code is only one way to contribute, though: we're particularly short on documentation. We'd also love to hear your feedback - come [talk to us on Slack](http://slack.quicktype.io)!
+quicktype is an open source project, and we're always happy about contributors. If you can think of a way to improve [this extension](https://github.com/ocamaker/quicktype-vscode), or [quicktype](https://github.com/ocamaker/quicktype), please consider contributing, especially if you know TypeScript. Code is only one way to contribute, though: we're particularly short on documentation. We'd also love to hear your feedback - come [talk to us on Slack](http://slack.quicktype.io)!
 
-If you find a bug, please [report it on GitHub](https://github.com/quicktype/quicktype-vscode/issues).
+If you find a bug, please [report it on GitHub](https://github.com/ocamaker/quicktype-vscode/issues).
