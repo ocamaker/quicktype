@@ -19,6 +19,7 @@ test/fixtures/java-lombok/target
 
 packages/*/dist
 packages/*/node_modules
+bundle/
 
 *.log
 /test/elm/libsysconfcpus/
