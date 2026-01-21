@@ -1,6 +1,6 @@
 {
     "name": "@ocamaker/quicktype-typescript-input",
-    "version": "18.0.15",
+    "version": "23.2.7",
     "description": "Package for using TypeScript as an input language to quicktype",
     "license": "Apache-2.0",
     "main": "dist/index.js",
@@ -11,12 +11,14 @@
         "build": "tsc"
     },
     "dependencies": {
-        "quicktype-core": "file:../quicktype-core",
+        "quicktype-core": "npm:quicktype-core@^22.0.0",
         "typescript": "4.9.5",
         "@mark.probst/typescript-json-schema": "0.55.0"
     },
     "devDependencies": {
         "@types/node": "~22.14.0"
     },
-    "files": ["dist"]
+    "files": [
+        "dist"
+    ]
 }

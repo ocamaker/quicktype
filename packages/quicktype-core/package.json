@@ -1,6 +1,6 @@
 {
     "name": "@ocamaker/quicktype-core",
-    "version": "18.0.15",
+    "version": "23.2.7",
     "description": "The quicktype engine as a library",
     "license": "Apache-2.0",
     "main": "dist/index.js",
@@ -46,7 +46,9 @@
             }
         }
     },
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "browser": {
         "fs": false
     }

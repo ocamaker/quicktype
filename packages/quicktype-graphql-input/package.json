@@ -1,6 +1,6 @@
 {
     "name": "@ocamaker/quicktype-graphql-input",
-    "version": "18.0.15",
+    "version": "23.2.7",
     "package": "Package for using GraphQL as an input language to quicktype",
     "license": "Apache-2.0",
     "main": "dist/index.js",
@@ -20,5 +20,7 @@
         "@types/graphql": "^0.11.7",
         "typescript": "~5.8.3"
     },
-    "files": ["dist"]
+    "files": [
+        "dist"
+    ]
 }
