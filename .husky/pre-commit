@@ -1,0 +1,12 @@
+# Branches: main, feature/*, fix/* or chore/*. Commits on any other branch are
+# refused; detached HEAD (e.g. during a rebase) is allowed.
+branch=$(git symbolic-ref --short -q HEAD) || exit 0
+
+case "$branch" in
+  main|feature/?*|fix/?*|chore/?*) ;;
+  *)
+    echo "Branch '$branch' does not follow the naming convention: main, feature/*, fix/* or chore/*."
+    echo "Create one with e.g.: git switch -c feature/<short-description>"
+    exit 1
+    ;;
+esac

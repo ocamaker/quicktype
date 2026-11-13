@@ -1,0 +1,61 @@
+name: conventions
+
+# Server-side twin of the local git hooks: a PR can only merge when
+#   - its branch is feature/*, fix/* or chore/*
+#   - its title and every commit message follow Conventional Commits:
+#       <type>(<optional scope>)!: <description>
+#     types: build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test
+# The title is checked because a squash merge uses it as the commit message.
+# Merge commits (e.g. GitHub's "Update branch") and bot PRs are skipped.
+#
+# Make the `conventions` check required in branch protection on main.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: conventions-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  conventions:
+    name: conventions
+    runs-on: ubuntu-22.04
+    if: github.event.pull_request.user.type != 'Bot'
+    steps:
+      - name: Check branch name, PR title and commit messages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.head_ref }}
+          TITLE: ${{ github.event.pull_request.title }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          branch_pattern='^(feature|fix|chore)/.+'
+          conventional='^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([^)]+\))?!?: .+'
+          failed=0
+
+          if [[ ! "$BRANCH" =~ $branch_pattern ]]; then
+            echo "::error::Branch '$BRANCH' must be feature/*, fix/* or chore/*."
+            failed=1
+          fi
+
+          if [[ ! "$TITLE" =~ $conventional ]]; then
+            echo "::error::PR title '$TITLE' is not a Conventional Commit (e.g. 'feat(api): add x')."
+            failed=1
+          fi
+
+          while IFS=$'\t' read -r sha subject; do
+            if [[ ! "$subject" =~ $conventional ]]; then
+              echo "::error::Commit ${sha:0:7} '$subject' is not a Conventional Commit (e.g. 'fix: handle y')."
+              failed=1
+            fi
+          done < <(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/commits" --paginate \
+                     --jq '.[] | select(.parents | length == 1) | [.sha, (.commit.message | split("\n")[0])] | @tsv')
+
+          if [[ $failed == 0 ]]; then echo "Branch, PR title and commit messages follow the conventions."; fi
+          exit $failed
