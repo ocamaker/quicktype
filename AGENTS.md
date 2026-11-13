@@ -2,6 +2,20 @@
 
 Instructions for coding agents working in this repository.
 
+## Global rules
+
+Read the [Oca Maker engineering guide](https://github.com/ocamaker/mcp/blob/main/ENGINEERING.md)
+before any work. It defines the architecture, the code rules (least code, typed shapes,
+contracts as the source of truth) and the team workflow (feature brief, small batches, tests
+written first by a different agent, PRs) for every repository. This file adds only what is
+specific to this one.
+
+## This repository
+
+**Role:** fork of the open-source `quicktype` generator, formerly used by `contracts` to
+generate TypeScript. `contracts` now uses `json-schema-to-typescript`, so this repository is
+**inactive**. Ask the Engineering Manager before doing any work here.
+
 ## Agent setup: do this before any work
 
 Run this from the repo root in every new clone or worktree, before you edit anything:
